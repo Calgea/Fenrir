@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import java.util.HashMap;
 import java.util.List;

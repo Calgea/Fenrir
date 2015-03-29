@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,12 +19,11 @@ public class UserDBResource {
 		} catch (Exception e) {
 			System.out.println("Table déjà là !");
 		}
-		dao.insert("foo");
 	}
 	
 	@POST
 	public User createUser(User user) {
-		int id = dao.insert(user.getName());
+		int id = dao.insert(user.getName(), user.getPass());
 		user.setId(id);
 		return user;
 	}

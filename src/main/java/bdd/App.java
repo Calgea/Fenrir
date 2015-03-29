@@ -1,4 +1,4 @@
-package fr.iutinfo;
+package bdd;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +15,6 @@ public class App extends Application {
     @Override
     public Set<Class<?>> getClasses() {
     	Set<Class<?>> s = new HashSet<Class<?>>();
-    	s.add(UserResource.class);
     	s.add(LoggingFilter.class);
     	s.add(UserDBResource.class);
     	return s;
@@ -24,7 +23,7 @@ public class App extends Application {
     public static DBI dbi;
 	static {
 		SQLiteDataSource ds = new SQLiteDataSource();
-		ds.setUrl("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"data.db");
+		ds.setUrl("jdbc:sqlite:data.db");
 		dbi = new DBI(ds);
     }
 }
